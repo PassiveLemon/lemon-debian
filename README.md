@@ -1,8 +1,8 @@
 # lemon-debian
 Scripts to install my custom Debian systems. </br>
 
-VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. It works for me, it might not for you. </br>
-Tested on Debian 11 minimal install
+ - VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. It works for me, it might not for you. </br>
+ - Only tested on Debian 11 minimal install
 
 # Instructions: </br>
  - Install Debian with the minimal iso and do not chose a desktop environment. </br>
@@ -14,11 +14,10 @@ Tested on Debian 11 minimal install
  - The scripts should tell you what you need to know.
 
 Todo: (Ignore) </br>
-desktop wifi script </br>
-custom TUI's - steam, spotify, discord, reddit </br>
-apps + configs </br> 
-nvidia driver </br>
-headless server scripts for vms </br>
-optimize script </br>
-^ integrate bspwm and gnome into one script with a choice </br>
-possibly fragment the scripts into individual scripts for each app. </br>
+ - custom TUI's - steam, spotify, discord, reddit </br>
+ - apps + configs </br> 
+ - nvidia driver </br>
+ - headless server scripts for vms </br>
+ - optimize script </br>
+ - integrate systems into one script with choices </br>
+ - possibly fragment the scripts into individual scripts for each app. </br>
