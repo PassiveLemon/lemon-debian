@@ -1,7 +1,7 @@
 # lemon-debian
 Scripts to install my custom Debian systems. </br>
 
-VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. </br>
+VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. It works for me, it might not for you. </br>
 Tested on Debian 11 minimal install
 
 # Instructions: </br>
