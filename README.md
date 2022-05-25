@@ -16,10 +16,10 @@ Scripts to install my custom Debian systems. </br>
 
 
 Todo / Change: (Ignore) </br>
- - custom TUI's - steam, spotify, discord, reddit </br>
- - apps + configs </br> 
- - nvidia driver </br>
- - headless server scripts for vms </br>
- - optimize script </br>
- - integrate systems into one script with choices </br>
- - possibly fragment the scripts into individual scripts for each app. </br>
+ - T custom TUI's - steam, spotify, discord, reddit </br>
+ - T apps + configs </br> 
+ - T nvidia driver </br>
+ - T headless server scripts for vms </br>
+ - T/C optimize script </br>
+ - T integrate systems into one script with choices </br>
+ - C possibly fragment the scripts into individual scripts for each app. </br>
