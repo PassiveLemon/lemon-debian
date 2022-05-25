@@ -1,6 +1,8 @@
 # lemon-debian
 Scripts to install my custom Debian systems. </br>
 
+Recently, I have been endulging in the greatness that is linux. I still use windows because I mostly play games but when I eventually switch to linux, i'll have everything ready in one package. It's also just fun to do because why not.
+
  - VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. It works for me, it might not for you. </br>
  - Only tested on Debian 11 minimal install
 
@@ -15,7 +17,7 @@ Scripts to install my custom Debian systems. </br>
  - The scripts should tell you what you need to know.
 
 
-Todo / Change: (Ignore) </br>
+# Todo / Change: (Ignore) </br>
  - T custom TUI's - steam, spotify, discord, reddit </br>
  - T apps + configs </br> 
  - T nvidia driver </br>
