@@ -14,7 +14,8 @@ Scripts to install my custom Debian systems. </br>
  - Again, this is a very WIP project. Do not expect much. I am not an expert.
  - The scripts should tell you what you need to know.
 
-Todo: (Ignore) </br>
+
+Todo / Change: (Ignore) </br>
  - custom TUI's - steam, spotify, discord, reddit </br>
  - apps + configs </br> 
  - nvidia driver </br>
