@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# If you aren't me, replace all "lemon" with your user account.
+
 # Run script as sudo
 
 if [ `whoami` != root ]; then
