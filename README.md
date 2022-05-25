@@ -1,7 +1,7 @@
 # lemon-debian
 Scripts to install my custom Debian systems. </br>
 
-Recently, I have been endulging in the greatness that is linux. I still use windows because I mostly play games but when I eventually switch to linux, i'll have everything ready in one package. It's also just fun to do because why not.
+Recently, I have been endulging in the greatness that is linux. I still use windows because I mostly play games but when I eventually switch to linux, I'll have everything ready in one package. Also will include headless server scripts for when I host servers (like Minecraft or Terraria) because I like to do that. It's also just fun mess around because why not.
 
  - VERY BIG WIP. Don't use if you aren't me unless you want to probably encounter bugs. It works for me, it might not for you. </br>
  - Only tested on Debian 11 minimal install
