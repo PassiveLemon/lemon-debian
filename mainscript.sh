@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ `whoami` = root ]; then
-    echo Please do not run this script as Sudo
+    echo "Please do not run this script as Sudo"
     exit
 fi
 
