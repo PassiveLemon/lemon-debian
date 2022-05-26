@@ -11,8 +11,8 @@ Recently, I have been endulging in the greatness that is linux. I still use wind
  - Add the package to a thumb drive (or other transferable medium) and mount it. </br>
  - Navigate into the package and run mainscript.sh.
    - NOTE: If you aren't me, edit the scripts and change all mentions of "lemon" (including sudoers in main/config/) to your user account to set up the OS. </br>
- - After the restart, choose either bspwm or Gnome and run the respective, scriptbspwm.sh or scriptgnome.sh script. Don't run both. </br>
- - After the second restart, run the respective, appsbspwm.sh or appsgnome.sh. Like previously, don't run both. </br>
+ - After the restart, choose either bspwm or Gnome and run the respective, scriptbspwm.sh or scriptgnome.sh script. This installs the main components of the desktop. Don't run both. </br>
+ - After the second restart, run the respective, appsbspwm.sh or appsgnome.sh. These are just apps that get installed. Like previously, don't run both. </br>
  - Again, this is a very WIP project. Do not expect much. I am not an expert.
  - The scripts should tell you what you need to know.
 
