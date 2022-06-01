@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "Please do not run this script as Sudo"
+  exit
+fi
+
+PS3="Choose desktop environment apps"
+select opt in "Gnome" "Xfce" "Quit"; do
+  case $opt in
+    "Gnome")
+      echo "Gnome selected"
+      #bash gnome/appsgnome
+      ;;
+    "Xfce")
+      echo "Xfce selected"
+      #bash xfce/appsxfce
+      ;;
+    "Quit")
+      break
+      ;;
+    *)
+      echo "Invalid"
+      ;;
+  esac
+  break
+done

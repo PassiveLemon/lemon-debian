@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "Please do not run this script as Sudo"
+  exit
+fi
+
+PS3="Choose window manager apps"
+select opt in "Bspwm" "placeholder" "Quit"; do
+  case $opt in
+    "Bspwm")
+      echo "Bspwm selected"
+      #sh bspwm/appsbspwm
+      ;;
+    "placeholder")
+      echo "placeholder selected"
+      #sh placeholder/appsplaceholder
+      ;;
+    "Quit")
+      break
+      ;;
+    *)
+      echo "Invalid"
+      ;;
+  esac
+  break
+done
