@@ -9,7 +9,7 @@ Scripts to install my custom Debian systems. </br>
  2. Add the package to a thumb drive, mount it, and navigate into it. </br>
      - This will need to be done from a device that already has an internet connection. You can also use any type of media that you like. </br>
  3. Run `mainscript` with bash. This will prepare the system. </br>
-     - NOTE: If you aren't me, edit the scripts and change all mentions of "lemon" (including sudoers in main/config/) to your user account. This also isn't entirely necessary but that depends on your conditions. </br>
+     - NOTE: If you aren't me, change "lemon" (line 21) in sudoers (main/config/) to your user account. This also isn't entirely necessary but that depends on your conditions. </br>
  4. After the restart, run `syschoose` with bash. You will be presented with options. Choose the appropriate options that suits your needs. </br>
 
  - Again, this is a very WIP project. Do not expect much. I am not an expert. </br>
