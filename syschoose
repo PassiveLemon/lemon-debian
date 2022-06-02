@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+PS3="Choose a system"
+select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
+  case $opt in
+    "Bspwm - WM")
+      echo "Bspwm selected"
+      bash bspwm/scriptbspwm;;
+    "Gnome - DE")
+      echo "Gnome selected"
+      #bash gnome/scriptgnome;;
+    "Xfce - DE")
+      echo "Xfce selected"
+      #bash Xfce/scriptxfce;;
+    "Server - HL")
+      echo "Headless server selected"
+      #bash server/scriptserver;;
+    "Quit")
+      break;;
+    *)
+      echo "Invalid option";;
+  esac
+  break
+done
