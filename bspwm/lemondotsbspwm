@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+sudo apt install git
+
+sudo git clone https://github.com/PassiveLemon/lemondots
+
+sudo dpkg -i lemondots/lightdm/lightdm-webkit2-greeter_2.2.5-1+15.8_amd64.deb
+sudo apt -f install
+
+sudo rm -rf /usr/share/lightdm-webkit/themes/minimal/
+sudo mkdir -p /usr/share/lightdm-webkit/themes/
+sudo cp -r lemondots/lightdm/minimal /usr/share/lightdm-webkit/themes/
+
+sudo rm -f /etc/lightdm/lightdm.conf
+sudo rm -f /etc/lightdm/lightdm-webkit2-greeter.conf
+sudo cp lemondots/lightdm/lightdm.conf /etc/lightdm/
+sudo cp lemondots/lightdm/lightdm-webkit2-greeter.conf /etc/lightdm/
+
+mkdir -p ~/.config/
+cp -r lemondots/config/* ~/.config/
+mkdir -p ~/.fonts/
+cp -r lemondots/fonts/*  ~/.fonts/
+cp lemondots/xinitrc ~/
+mv ~/xinitrc ~/.xinitrc
+
+mkdir -p ~/Pictures/
+sudo cp -r lemondots/backgrounds/ ~/Pictures/
