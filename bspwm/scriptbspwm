@@ -7,11 +7,6 @@ if [ $EUID = 0 ]; then
   exit
 fi
 
-echo "|| Updating and upgrading ||"
-
-sudo apt update && sudo apt upgrade
-
-echo "|| Updated and upgraded ||"
 echo "|| Installing components ||"
 
 sudo apt install lightdm xorg bspwm sxhkd kitty rofi polybar picom feh psmisc alsa-utils
