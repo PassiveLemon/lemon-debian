@@ -1,0 +1,60 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+echo "|| Updating and upgrading ||"
+
+sudo apt update && sudo apt upgrade
+
+echo "|| Updated and upgraded ||"
+echo "|| Installing components ||"
+
+sudo apt install lightdm xorg bspwm sxhkd kitty rofi polybar picom feh psmisc alsa-utils
+sudo alsactl init
+
+echo "|| Components installed ||"
+echo "|| Configurations selection ||"
+
+while true; do
+  read -pr "Do you want to install my dotfiles? [Y/n]" yn
+  case $yn in
+    [Yy]* ) bash bspwm/lemondotsbspwm;;
+    [Nn]* ) exit;;
+    "" ) bash bspwm/lemondotsbspwm;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
+
+echo "|| Configurations selected ||"
+echo "|| Programs selection ||"
+
+while true; do
+  read -pr "Do you want to install my programs? [Y/n]" yn
+  case $yn in
+    [Yy]* ) bash bspwm/appsbspwm;;
+    [Nn]* ) exit;;
+    "" ) bash bspwm/appsbspwm;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
+
+echo "|| Programs selected ||"
+echo "|| Restart ||"
+
+while true; do
+  read -pr "Do you want to restart now? [Y/n]" yn
+  case $yn in
+    [Yy]* ) sudo shutdown -r now;;
+    [Nn]* ) exit;;
+    "" ) sudo shutdown -r now;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
