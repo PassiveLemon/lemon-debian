@@ -15,13 +15,16 @@ select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
       bash bspwm/scriptbspwm;;
     "Gnome - DE")
       echo "Gnome selected"
-      #bash gnome/scriptgnome;;
+      #bash gnome/scriptgnome
+      ;;
     "Xfce - DE")
       echo "Xfce selected"
-      #bash Xfce/scriptxfce;;
+      #bash Xfce/scriptxfce
+      ;;
     "Server - HL")
       echo "Headless server selected"
-      #bash server/scriptserver;;
+      #bash server/scriptserver
+      ;;
     "Quit")
       break;;
     *)
