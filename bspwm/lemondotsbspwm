@@ -27,11 +27,11 @@ cp -r lemondots/.config/ ~/
 cp -r lemondots/.fonts/ ~/
 cp lemondots/.xinitrc ~/
 
-rm -r lemondots/
+sudo rm -r lemondots/
 
-git clone https://github.com/PassiveLemon/lemonwallpapers/
+sudo git clone https://github.com/PassiveLemon/lemonwallpapers/
 
 mkdir -p ~/Pictures/
-sudo cp -r lemonwallpapers/wallpapers/ ~/Pictures/
+cp -r lemonwallpapers/wallpapers/ ~/Pictures/
 
-rm -r lemonwallpapers/
+sudo rm -r lemonwallpapers/
