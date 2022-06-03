@@ -7,7 +7,13 @@ if [ $EUID = 0 ]; then
   exit
 fi
 
-PS3="Choose a system"
+echo "|| Updating and upgrading ||"
+
+sudo apt update && sudo apt upgrade
+
+echo "|| Updated and upgraded ||"
+
+PS3="|| Choose a system ||"
 select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
   case $opt in
     "Bspwm - WM")
