@@ -9,8 +9,6 @@ fi
 
 echo "|| Setting up system ||"
 
-sudo mkdir -p /media/usb/
-
 # Sudo
 echo "|| Sudo ||"
 sudo apt install sudo
