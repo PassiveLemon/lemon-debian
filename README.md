@@ -19,5 +19,4 @@ Scripts to install my custom Debian systems. </br>
 # Todo / Change: (Ignore) </br>
  - T Gnome DE </br>
  - T Xfce DE </br>
- - T headless server </br>
  - T nvidia driver </br>
