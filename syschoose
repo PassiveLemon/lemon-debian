@@ -27,10 +27,6 @@ select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
       echo "Xfce selected"
       #bash Xfce/scriptxfce
       ;;
-    "Server - HL")
-      echo "Headless server selected"
-      #bash server/scriptserver
-      ;;
     "Quit")
       break;;
     *)
