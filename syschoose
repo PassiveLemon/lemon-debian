@@ -18,19 +18,22 @@ select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
   case $opt in
     "Bspwm - WM")
       echo "Bspwm selected"
-      bash bspwm/scriptbspwm;;
-    "Gnome - DE")
+      bash bspwm/scriptbspwm
+      ;;
+     "Gnome - DE")
       echo "Gnome selected"
       #bash gnome/scriptgnome
       ;;
-    "Xfce - DE")
+     "Xfce - DE")
       echo "Xfce selected"
-      #bash Xfce/scriptxfce
+      #bash xfce/scriptxfce
       ;;
     "Quit")
-      break;;
+      break
+      ;;
     *)
-      echo "Invalid option";;
+      echo "Invalid option"
+      ;;
   esac
   break
 done
