@@ -47,14 +47,8 @@ echo "|| Firefox ||"
 sudo apt install firefox-esr
 
 # Bpytop
-echo "|| Bashtop ||"
-git clone https://github.com/aristocratos/bashtop.git
-cd bashtop
-sudo make install
-rm -r bashtop
-
-rm -rf ~/.config/bpytop/
-sudo cp -r bpytop ~/.config/
+echo "|| Htop ||"
+sudo apt install htop
 
 # Neofetch
 echo "|| Neofetch ||"
@@ -74,10 +68,6 @@ sudo apt install vlc
 # Spotify
 echo "|| Spotify ||"
 flatpak install flathub com.spotify.Client
-# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
-# echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-# sudo apt update
-# sudo apt install spotify-client
 
 # Discord
 echo "|| Discord ||"
