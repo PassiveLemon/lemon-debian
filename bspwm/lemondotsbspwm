@@ -14,14 +14,8 @@ sudo git clone https://github.com/PassiveLemon/lemondots/
 cp -r lemondots/.config/ ~/
 cp -r lemondots/.fonts/ ~/
 cp -r lemondots/.icons/ ~/
+cp -r lemondots/.wallpapers/ ~/
 cp lemondots/.xinitrc ~/
 cp lemondots/.Xresources ~/
 
 sudo rm -r lemondots/
-
-sudo git clone https://github.com/PassiveLemon/lemonwallpapers/
-
-mkdir -p ~/Pictures/
-cp -r lemonwallpapers/wallpapers/ ~/Pictures/
-
-sudo rm -r lemonwallpapers/
