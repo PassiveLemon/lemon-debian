@@ -13,7 +13,9 @@ sudo git clone https://github.com/PassiveLemon/lemondots/
 
 cp -r lemondots/.config/ ~/
 cp -r lemondots/.fonts/ ~/
+cp -r lemondots/.icons/ ~/
 cp lemondots/.xinitrc ~/
+cp lemondots/.Xresources ~/
 
 sudo rm -r lemondots/
 
