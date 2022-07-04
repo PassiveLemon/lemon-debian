@@ -18,15 +18,15 @@ select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
   case $opt in
     "Bspwm - WM")
       echo "Bspwm selected"
-      bash bspwm/scriptbspwm
+      bash bspwm/1bspwm
       ;;
      "Gnome - DE")
       echo "Gnome selected"
-      #bash gnome/scriptgnome
+      #bash gnome/1gnome
       ;;
      "Xfce - DE")
       echo "Xfce selected"
-      #bash xfce/scriptxfce
+      #bash xfce/1xfce
       ;;
     "Quit")
       break
