@@ -1,0 +1,88 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+    echo "====================================="
+    echo "Please do not run this script as Sudo"
+    echo "====================================="
+    exit
+fi
+
+echo "|| Installing package managers ||"
+
+# Flatpak
+echo "|| Flatpak ||"
+sudo apt install flatpak
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+echo "|| Package managers installed ||"
+echo "|| Installing utilities ||"
+
+# Git, wget, curl, make
+echo "|| Git, wget, curl, make ||"
+sudo apt install git wget curl make
+
+# Scrot
+echo "|| Scrot ||"
+sudo apt install scrot
+
+# echo "Java 17"
+     # echo "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu focal main" | tee /etc/apt/sources.list.d/linuxuprising-java.list
+        # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 73C3DB2A
+        # apt update
+        # exit
+    # add-apt-repository ppa:linuxuprising/java
+    	# apt update
+   		# apt install oracle-java17-installer --install-recommends
+
+# Nvidia Drivers
+# echo "Nvidia drivers"
+# sudo apt install nvidia-driver
+
+echo "|| Utilities installed ||"
+echo "|| Installing apps ||"
+
+# Firefox
+echo "|| Firefox ||"
+sudo apt install firefox-esr
+
+# Bpytop
+echo "|| Htop ||"
+sudo apt install htop
+
+# Neofetch
+echo "|| Neofetch ||"
+sudo apt install neofetch
+
+# Gparted
+echo "|| Gparted ||"
+sudo apt install gparted
+
+# VLC
+echo "|| VLC ||"
+sudo apt install vlc
+
+# Spotify
+echo "|| Spotify ||"
+flatpak install flathub com.spotify.Client
+
+# Discord
+echo "|| Discord ||"
+flatpak install flathub com.discordapp.Discord
+
+# Steam
+echo "|| Steam ||"
+flatpak install flathub com.valvesoftware.Steam
+
+echo "|| Apps installed ||"
+echo "|| Restarting ||"
+
+while true; do
+  read -p "Do you want to restart now? [Y/n]" yn
+  case $yn in
+    [Yy]* ) sudo shutdown -r now;;
+    [Nn]* ) exit;break;;
+    "" ) sudo shutdown -r now;;
+    * ) echo "Invalid response";;
+  esac
+done
