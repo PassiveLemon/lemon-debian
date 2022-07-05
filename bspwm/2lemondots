@@ -18,4 +18,6 @@ cp -r lemondots/.wallpapers/ $HOME/
 cp lemondots/.xinitrc $HOME/
 cp lemondots/.Xresources $HOME/
 
+sudo tar xvzf $HOME/.icons/volantes_cursors.tar.gz
+
 sudo rm -r lemondots/
