@@ -12,7 +12,7 @@ Scripts to install my custom Debian systems. </br>
      - Gnome: None - No Debian desktop environment </br>
  2. Clone this git to a drive, mount it, and navigate into it. </br>
      - This will need to be done from a device that already has an internet connection and can R/W to external drives. It doesn't have to be a thumb drive but thats the simplest way. </br>
- 3. Run `syschoose` with bash. Follow the prompts to your liking. </br>
+ 3. Run `setup` with bash. Follow the prompts to your liking. </br>
 
  - Again, this is a very WIP project. Do not expect much. I am not an expert. </br>
  - The scripts should tell you what you need to know. </br>
@@ -20,6 +20,6 @@ Scripts to install my custom Debian systems. </br>
 
 # Todo / Change: (Ignore) </br>
  - WIP Xfce DE </br>
-  - Xfce desktop configs, themes </br>
+   - Xfce desktop configs, themes </br>
  - T Nvidia driver </br>
  - T Gnome DE </br>
