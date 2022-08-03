@@ -20,6 +20,6 @@ Scripts to install my custom Debian systems. </br>
 
 # Todo / Change: (Ignore) </br>
  - WIP Xfce DE </br>
-  - Xfce desktop configs, themes </br>
+   - Xfce desktop configs, themes </br>
  - T Nvidia driver </br>
  - T Gnome DE </br>
