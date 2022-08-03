@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+sudo mkdir $HOME/lemontemp/
+cd $HOME/lemontemp/
+
+sudo apt install git unzip tar
+
+echo "|| Getting dotfiles ||"
+sudo git clone https://github.com/PassiveLemon/lemondots/
+
+cp -r lemondots/.config/ $HOME/
+cp -r lemondots/.fonts/ $HOME/
+cp -r lemondots/.icons/ $HOME/
+cp -r lemondots/.wallpapers/ $HOME/
+cp lemondots/.xinitrc $HOME/
+cp lemondots/.Xresources $HOME/
+
+echo "|| Extracting archives ||"
+cd $HOME/.icons/
+sudo unzip kora_*.zip
+sudo tar xvzf volantes*.tar.gz
+
+sudo rm *.zip *.tar.gz
+
+cd $HOME/.themes/
+sudo tar -xf nordic-darker*.tar.xz
+
+sudo rm *.tar.xz
+
+sudo rm -r $HOME/lemontemp/

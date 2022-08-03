@@ -1,0 +1,63 @@
+#!/bin/bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+sudo mkdir $HOME/lemontemp/
+cd $HOME/lemontemp/
+
+echo "|| Installing components ||"
+sudo apt install kitty rofi polybar
+
+echo "|| Ly ||"
+sudo apt install build-essential libpam0g-dev libxcb-xkb-dev git
+sudo git clone --recurse-submodules https://github.com/cylgom/ly.git
+cd ly
+sudo make
+sudo make install
+sudo systemctl disable lightdm
+sudo systemctl enable ly.service
+cd ..
+sudo rm -r ly
+
+sudo rm -r $HOME/lemontemp/
+
+echo "|| Extra selection ||"
+while true; do
+  read -p "Do you want to install my dotfiles? [Y/n]" yn
+  case $yn in
+    [Yy]* ) bash lemondots;;
+    [Nn]* ) break;;
+    "" ) bash lemondots;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
+
+echo "|| Programs selection ||"
+while true; do
+  read -p "Do you want to install my programs? [Y/n]" yn
+  case $yn in
+    [Yy]* ) bash apps;;
+    [Nn]* ) break;;
+    "" ) bash apps;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
+
+echo "|| Restart ||"
+while true; do
+  read -p "Do you want to restart now? [Y/n]" yn
+  case $yn in
+    [Yy]* ) sudo shutdown -r now;;
+    [Nn]* ) break;;
+    "" ) sudo shutdown -r now;;
+    * ) echo "Invalid response";;
+  esac
+  break
+done
