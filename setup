@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+echo "|| Updating and upgrading ||"
+sudo apt update && sudo apt upgrade
+
+PS3="|| Choose a system ||"
+select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
+  case $opt in
+    "Bspwm - WM")
+      echo "Bspwm selected"
+      bash bspwm
+      ;;
+     "Gnome - DE")
+      echo "Gnome selected"
+      bash gnome
+      ;;
+     "Xfce - DE")
+      echo "Xfce selected"
+      bash xfce
+      ;;
+    "Quit")
+      break
+      ;;
+    *)
+      echo "Invalid option"
+      ;;
+  esac
+  break
+done

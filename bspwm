@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $EUID = 0 ]; then
   echo "====================================="
@@ -8,7 +8,7 @@ if [ $EUID = 0 ]; then
 fi
 
 sudo mkdir $HOME/lemontemp/
-cd $HOME/lemontemp/
+pushd $HOME/lemontemp/
 
 echo "|| Installing components ||"
 sudo apt install xorg bspwm sxhkd kitty rofi polybar feh psmisc alsa-utils network-manager
@@ -36,6 +36,7 @@ cd ..
 sudo rm -r picom
 
 sudo rm -r $HOME/lemontemp/
+popd
 
 echo "|| Extra selection ||"
 while true; do

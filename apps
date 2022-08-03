@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $EUID = 0 ]; then
   echo "====================================="
@@ -8,7 +8,7 @@ if [ $EUID = 0 ]; then
 fi
 
 sudo mkdir $HOME/lemontemp/
-cd $HOME/lemontemp/
+pushd $HOME/lemontemp/
 
 echo "|| Installing package managers ||"
 
@@ -55,6 +55,7 @@ echo "|| Steam ||"
 flatpak install flathub com.valvesoftware.Steam
 
 sudo rm -r $HOME/lemontemp/
+popd
 
 echo "|| Restarting ||"
 while true; do
