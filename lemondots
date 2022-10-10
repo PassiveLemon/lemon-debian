@@ -19,7 +19,8 @@ cp -r lemondots/* $HOME/
 rm $HOME/LICENSE
 rm $HOME/README.md
 rm $HOME/grub
-sudo cp grub /etc/default/
+sudo mv /etc/default/grub /etc/default/grub.bak
+sudo cp lemondots/grub /etc/default/
 
 echo "|| Extracting archives ||"
 cd $HOME/.icons/
