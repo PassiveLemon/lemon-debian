@@ -18,6 +18,8 @@ sudo git clone https://github.com/PassiveLemon/lemondots/
 cp -r lemondots/* $HOME/
 rm $HOME/LICENSE
 rm $HOME/README.md
+rm $HOME/grub
+sudo cp grub /etc/default/
 
 echo "|| Extracting archives ||"
 cd $HOME/.icons/
@@ -30,6 +32,13 @@ cd $HOME/.themes/
 sudo tar -xf nordic-darker*.tar.xz
 
 sudo rm *.tar.xz
+
+sudo mkdir /boot/grub/themes/debian/
+cd /boot/grub/themes/debian/
+sudo curl -LO https://github.com/AdisonCavani/distro-grub-themes/releases/download/v2.8/debian.tar
+sudo tar -xvf debian.tar
+sudo rm -rf debian.tar
+sudo update-grub
 
 sudo rm -r $HOME/lemontemp/
 
