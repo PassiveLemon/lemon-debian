@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+if [ $EUID = 0 ]; then
+  echo "====================================="
+  echo "Please do not run this script as Sudo"
+  echo "====================================="
+  exit
+fi
+
+sudo mkdir $HOME/lemontemp/
+pushd $HOME/lemontemp/
+
+sudo apt install -y git unzip tar
+
+echo "|| Getting dotfiles ||"
+sudo git clone https://github.com/PassiveLemon/lemondots/
+
+cp -r lemondots/* $HOME/
+rm $HOME/LICENSE
+rm $HOME/README.md
+rm $HOME/grub
+sudo cp grub /etc/default/
+
+echo "|| Extracting archives ||"
+cd $HOME/.icons/
+sudo unzip kora_*.zip
+sudo tar xvzf volantes*.tar.gz
+
+sudo rm *.zip *.tar.gz
+
+cd $HOME/.themes/
+sudo tar -xf nordic-darker*.tar.xz
+
+sudo rm *.tar.xz
+
+sudo mkdir /boot/grub/themes/debian/
+cd /boot/grub/themes/debian/
+sudo curl -LO https://github.com/AdisonCavani/distro-grub-themes/releases/download/v2.8/debian.tar
+sudo tar -xvf debian.tar
+sudo rm -rf debian.tar
+sudo update-grub
+
+sudo rm -r $HOME/lemontemp/
+
+echo "|| Changing permissions ||"
+sudo chmod u+x $HOME/.xinitrc
+sudo chmod u+x $HOME/.config/bspwm/bspwmrc
+sudo chmod u+x $HOME/.config/bspwm/bspwmrc
+popd

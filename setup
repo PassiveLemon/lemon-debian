@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $EUID = 0 ]; then
   echo "====================================="
@@ -8,25 +8,22 @@ if [ $EUID = 0 ]; then
 fi
 
 echo "|| Updating and upgrading ||"
-
-sudo apt update && sudo apt upgrade
-
-echo "|| Updated and upgraded ||"
+sudo apt update -y && sudo apt upgrade -y
 
 PS3="|| Choose a system ||"
 select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
   case $opt in
     "Bspwm - WM")
       echo "Bspwm selected"
-      bash bspwm/1bspwm
+      bash bspwm
       ;;
      "Gnome - DE")
       echo "Gnome selected"
-      #bash gnome/1gnome
+      bash gnome
       ;;
      "Xfce - DE")
       echo "Xfce selected"
-      #bash xfce/1xfce
+      bash xfce
       ;;
     "Quit")
       break
