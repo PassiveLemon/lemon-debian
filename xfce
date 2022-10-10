@@ -11,14 +11,14 @@ sudo mkdir $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
 echo "|| Installing components ||"
-sudo apt install kitty rofi polybar
+sudo apt install -y kitty rofi polybar
 
 echo "|| Ly ||"
-sudo apt install build-essential libpam0g-dev libxcb-xkb-dev git
-sudo git clone --recurse-submodules https://github.com/cylgom/ly.git
+sudo apt install -y build-essential libpam0g-dev libxcb-xkb-dev git
+sudo git clone --recurse-submodules https://github.com/fairlyglade/ly.git
 cd ly
 sudo make
-sudo make install
+sudo make install installsystemd
 sudo systemctl disable lightdm
 sudo systemctl enable ly.service
 cd ..

@@ -8,7 +8,7 @@ if [ $EUID = 0 ]; then
 fi
 
 echo "|| Updating and upgrading ||"
-sudo apt update && sudo apt upgrade
+sudo apt update -y && sudo apt upgrade -y
 
 PS3="|| Choose a system ||"
 select opt in "Bspwm - WM" "Gnome - DE" "Xfce - DE" "Quit"; do
