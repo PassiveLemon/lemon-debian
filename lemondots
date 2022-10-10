@@ -15,13 +15,9 @@ sudo apt install -y git unzip tar
 echo "|| Getting dotfiles ||"
 sudo git clone https://github.com/PassiveLemon/lemondots/
 
-cp -r lemondots/.config/ $HOME/
-cp -r lemondots/.fonts/ $HOME/
-cp -r lemondots/.icons/ $HOME/
-cp -r lemondots/.themes/ $HOME/
-cp -r lemondots/.wallpapers/ $HOME/
-cp lemondots/.xinitrc $HOME/
-cp lemondots/.Xresources $HOME/
+cp -r lemondots/* $HOME/
+rm -r $HOME/LICENSE
+rm -r $HOME/README.md
 
 echo "|| Extracting archives ||"
 cd $HOME/.icons/
