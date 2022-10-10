@@ -16,10 +16,3 @@ Scripts to install my custom Debian systems. </br>
 
  - Again, this is a very WIP project. Do not expect much. I am not an expert. </br>
  - The scripts should tell you what you need to know. </br>
-
-
-# Todo / Change: (Ignore) </br>
- - WIP Xfce DE </br>
-   - Xfce desktop configs, themes </br>
- - T Nvidia driver </br>
- - T Gnome DE </br>
