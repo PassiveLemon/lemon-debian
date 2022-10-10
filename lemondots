@@ -10,7 +10,7 @@ fi
 sudo mkdir $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
-sudo apt install -y git unzip tar
+sudo apt install -y git unzip tar curl
 
 echo "|| Getting dotfiles ||"
 sudo git clone https://github.com/PassiveLemon/lemondots/
