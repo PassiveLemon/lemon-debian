@@ -16,8 +16,8 @@ echo "|| Getting dotfiles ||"
 sudo git clone https://github.com/PassiveLemon/lemondots/
 
 cp -r lemondots/* $HOME/
-rm -r $HOME/LICENSE
-rm -r $HOME/README.md
+rm $HOME/LICENSE
+rm $HOME/README.md
 
 echo "|| Extracting archives ||"
 cd $HOME/.icons/
