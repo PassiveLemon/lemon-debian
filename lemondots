@@ -34,7 +34,7 @@ sudo tar -xf nordic-darker*.tar.xz
 
 sudo rm *.tar.xz
 
-sudo mkdir /boot/grub/themes/debian/
+sudo mkdir -p /boot/grub/themes/debian/
 cd /boot/grub/themes/debian/
 sudo curl -LO https://github.com/AdisonCavani/distro-grub-themes/releases/download/v2.8/debian.tar
 sudo tar -xvf debian.tar
