@@ -24,8 +24,6 @@ cp lemondots/.gtkrc-2.0 $HOME/
 cp lemondots/.xinitrc $HOME/
 rm $HOME/LICENSE
 rm $HOME/README.md
-sudo mv /etc/default/grub /etc/default/grub.bak
-sudo cp lemondots/grub /etc/default/
 
 echo "|| Extracting archives ||"
 cd $HOME/.icons/
@@ -39,17 +37,5 @@ sudo tar -xf nordic-darker*.tar.xz
 
 sudo rm *.tar.xz
 
-sudo mkdir -p /boot/grub/themes/debian/
-cd /boot/grub/themes/debian/
-sudo curl -LO https://github.com/AdisonCavani/distro-grub-themes/releases/download/v2.8/debian.tar
-sudo tar -xvf debian.tar
-sudo rm -rf debian.tar
-sudo update-grub
-
 sudo rm -r $HOME/lemontemp/
-
-echo "|| Changing permissions ||"
-sudo chmod u+x $HOME/.xinitrc
-sudo chmod u+x $HOME/.config/bspwm/bspwmrc
-sudo chmod u+x $HOME/.config/bspwm/bspwmrc
 popd
