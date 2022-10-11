@@ -15,10 +15,15 @@ sudo apt install -y git unzip tar curl
 echo "|| Getting dotfiles ||"
 sudo git clone https://github.com/PassiveLemon/lemondots/
 
-cp -r lemondots/* $HOME/
+cp -r lemondots/.config/ $HOME/
+cp -r lemondots/.fonts/ $HOME/
+cp -r lemondots/.icons/ $HOME/
+cp -r lemondots/.themes/ $HOME/
+cp -r lemondots/.wallpapers/ $HOME/
+cp lemondots/.gtkrc-2.0 $HOME/
+cp lemondots/.xinitrc $HOME/
 rm $HOME/LICENSE
 rm $HOME/README.md
-rm $HOME/grub
 sudo mv /etc/default/grub /etc/default/grub.bak
 sudo cp lemondots/grub /etc/default/
 
