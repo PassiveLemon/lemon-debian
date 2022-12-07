@@ -12,6 +12,6 @@ Scripts to install my custom Debian systems. </br>
      - Xfce: Xfce - No Debian desktop environment </br>
  2. Clone this git to a drive, mount it, and navigate into it. </br>
      - You can just directly clone this assuming you have internet or you can put it on a thumb drive, mount it, and cd into it. </br>
- 3. Run `setup` with bash. Follow the prompts to your liking. </br>
+ 3. Run `setup.sh` with bash. Follow the prompts to your liking. </br>
 
  - Again, this is a very WIP project. Do not expect much. I am not an expert. </br>
