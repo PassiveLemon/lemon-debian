@@ -10,14 +10,14 @@ fi
 sudo mkdir $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
-echo "|| Installing package managers ||"
+echo "|| Install package managers ||"
 
 echo "|| Flatpak ||"
 sudo apt install -y flatpak
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-echo "|| Installing utilities ||"
+echo "|| Install utilities ||"
 
 echo "|| Git, wget, curl, make ||"
 sudo apt install -y git wget curl make
@@ -28,7 +28,7 @@ sudo apt install -y git wget curl make
 echo "|| Scrot ||"
 sudo apt install -y scrot
 
-echo "|| Installing apps ||"
+echo "|| Install apps ||"
 
 echo "|| Firefox ||"
 sudo apt install -y firefox-esr
@@ -56,14 +56,3 @@ flatpak install flathub com.valvesoftware.Steam
 
 sudo rm -r $HOME/lemontemp/
 popd
-
-echo "|| Restarting ||"
-while true; do
-  read -p "Do you want to restart now? [Y/n]" yn
-  case $yn in
-    [Yy]* ) sudo shutdown -r now;;
-    [Nn]* ) exit;break;;
-    "" ) sudo shutdown -r now;;
-    * ) echo "Invalid response";;
-  esac
-done

@@ -7,45 +7,49 @@ if [ $EUID = 0 ]; then
   exit
 fi
 
-sudo mkdir $HOME/lemontemp/
-pushd $HOME/lemontemp/
+echo "|| Update and upgrade ||"
+sudo apt update -y && sudo apt upgrade -y
 
-echo "|| Installing components ||"
-sudo apt install -y kitty rofi polybar
+PS3="|| Choose a system ||"
+select opt in "Bspwm - WM" "Xfce - DE" "Quit"; do
+  case $opt in
+    "Bspwm - WM")
+      echo "Bspwm selected"
+      bash bspwm.sh
+      ;;
+     "Xfce - DE")
+      echo "Xfce selected"
+      bash xfce.sh
+      ;;
+    "Quit")
+      break
+      ;;
+    *)
+      echo "Invalid option"
+      ;;
+  esac
+  break
+done
 
-echo "|| Ly ||"
-sudo apt install -y build-essential libpam0g-dev libxcb-xkb-dev git
-sudo git clone --recurse-submodules https://github.com/fairlyglade/ly.git
-cd ly
-sudo make
-sudo make install installsystemd
-sudo systemctl disable lightdm
-sudo systemctl enable ly.service
-cd ..
-sudo rm -r ly
-
-sudo rm -r $HOME/lemontemp/
-popd
-
-echo "|| Extra selection ||"
+echo "|| Dotfiles ||"
 while true; do
   read -p "Do you want to install my dotfiles? [Y/n]" yn
   case $yn in
-    [Yy]* ) bash lemondots;;
+    [Yy]* ) bash lemondots.sh;;
     [Nn]* ) break;;
-    "" ) bash lemondots;;
+    "" ) bash lemondots.sh;;
     * ) echo "Invalid response";;
   esac
   break
 done
 
-echo "|| Programs selection ||"
+echo "|| Programs ||"
 while true; do
   read -p "Do you want to install my programs? [Y/n]" yn
   case $yn in
-    [Yy]* ) bash apps;;
+    [Yy]* ) bash apps.sh;;
     [Nn]* ) break;;
-    "" ) bash apps;;
+    "" ) bash apps.sh;;
     * ) echo "Invalid response";;
   esac
   break

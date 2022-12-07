@@ -10,32 +10,29 @@ fi
 sudo mkdir $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
-sudo apt install -y git unzip tar curl
+sudo apt install -y git
 
 echo "|| Getting dotfiles ||"
 sudo git clone https://github.com/PassiveLemon/lemondots/
 
 cp -r lemondots/.config/ $HOME/
-cp -r lemondots/.fonts/ $HOME/
-cp -r lemondots/.icons/ $HOME/
-cp -r lemondots/.themes/ $HOME/
+cp -r lemondots/.local/ $HOME/
 cp -r lemondots/.wallpapers/ $HOME/
-cp lemondots/.gtkrc-2.0 $HOME/
 cp lemondots/.xinitrc $HOME/
-rm $HOME/LICENSE
-rm $HOME/README.md
+cp lemondots/.Xresources $HOME/
 
-echo "|| Extracting archives ||"
-cd $HOME/.icons/
-sudo unzip kora_*.zip
-sudo tar xvzf volantes*.tar.gz
+echo "|| Running sub-scripts ||"
 
-sudo rm *.zip *.tar.gz
+bash $HOME/.local/fontsscript.sh
+bash $HOME/.local/iconsscript.sh
+bash $HOME/.local/themesscript.sh
 
-cd $HOME/.themes/
-sudo tar -xf nordic-darker*.tar.xz
+#echo "|| Grub theme ||"
 
-sudo rm *.tar.xz
+echo "|| Changing permissions ||"
+sudo chmod u+x $HOME/.xinitrc
+sudo chmod u+x $HOME/.config/bspwm/bspwmrc
+sudo chmod u+x $HOME/.config/sxhkd/sxhkdrc
 
 sudo rm -r $HOME/lemontemp/
 popd

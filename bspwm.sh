@@ -10,7 +10,7 @@ fi
 sudo mkdir $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
-echo "|| Installing components ||"
+echo "|| Install dependencies ||"
 sudo apt install -y xorg bspwm sxhkd kitty rofi polybar feh psmisc alsa-utils network-manager
 sudo alsactl init
 
@@ -22,7 +22,6 @@ sudo make
 sudo make install installsystemd
 sudo systemctl enable ly.service
 cd ..
-sudo rm -r ly
 
 echo "|| Picom Fork ||"
 sudo apt -y install ninja-build gcc meson python3 cmake libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
@@ -33,43 +32,6 @@ sudo meson --buildtype=release . build
 sudo ninja -C build
 sudo ninja -C build install
 cd ..
-sudo rm -r picom
 
 sudo rm -r $HOME/lemontemp/
 popd
-
-echo "|| Extra selection ||"
-while true; do
-  read -p "Do you want to install my dotfiles? [Y/n]" yn
-  case $yn in
-    [Yy]* ) bash lemondots;;
-    [Nn]* ) break;;
-    "" ) bash lemondots;;
-    * ) echo "Invalid response";;
-  esac
-  break
-done
-
-echo "|| Programs selection ||"
-while true; do
-  read -p "Do you want to install my programs? [Y/n]" yn
-  case $yn in
-    [Yy]* ) bash apps;;
-    [Nn]* ) break;;
-    "" ) bash apps;;
-    * ) echo "Invalid response";;
-  esac
-  break
-done
-
-echo "|| Restart ||"
-while true; do
-  read -p "Do you want to restart now? [Y/n]" yn
-  case $yn in
-    [Yy]* ) sudo shutdown -r now;;
-    [Nn]* ) break;;
-    "" ) sudo shutdown -r now;;
-    * ) echo "Invalid response";;
-  esac
-  break
-done
