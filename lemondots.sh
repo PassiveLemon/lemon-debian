@@ -18,8 +18,8 @@ sudo git clone https://github.com/PassiveLemon/lemondots/
 cp -r lemondots/.config/ $HOME/
 cp -r lemondots/.local/ $HOME/
 cp -r lemondots/.wallpapers/ $HOME/
+cp lemondots/.gtkrc-2.0 $HOME/
 cp lemondots/.xinitrc $HOME/
-cp lemondots/.Xresources $HOME/
 
 echo "|| Running sub-scripts ||"
 
