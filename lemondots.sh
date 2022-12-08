@@ -8,6 +8,7 @@ if [ $EUID = 0 ]; then
 fi
 
 sudo mkdir $HOME/lemontemp/
+sudo chmod 777 $HOME/lemontemp/
 pushd $HOME/lemontemp/
 
 sudo apt install -y git
