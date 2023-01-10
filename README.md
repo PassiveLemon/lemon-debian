@@ -1,5 +1,5 @@
 # lemon-debian </br>
-### Will be discontinued as I plan on switching to NixOS. </br>
+# <b>DISCONTINUED. I no longer use Debian.</b> </br>
 
 Scripts to install my custom Debian systems. </br>
 

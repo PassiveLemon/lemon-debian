@@ -17,7 +17,7 @@ select opt in "Bspwm - WM" "Xfce - DE" "Quit"; do
       echo "Bspwm selected"
       bash bspwm.sh
       ;;
-     "Xfce - DE")
+    "Xfce - DE")
       echo "Xfce selected"
       bash xfce.sh
       ;;
